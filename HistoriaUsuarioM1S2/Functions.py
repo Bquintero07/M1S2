@@ -1,3 +1,4 @@
+#esta funcion recibe una lista, y 3 parametros crea un diccionario y lo añade a la lista
 def addproduct(inventories,name, price, quantity):
     product = product = {"Name" : name, "Price" : price, "Quantity" : quantity}
     inventories.append(product)
@@ -10,6 +11,7 @@ def showinventories(inventories):
         for inventary in inventories:
             print(f"Nombre: {inventary["Name"]} | Precio: {inventary["Price"]} | Cantidad: {inventary["Quantity"]}")
     else:
+        #en caso de que la lista este vacia damos el mensaje informativo
         print("\nNo hay ningun producto en la lista aun.\n")
 
 def statics(option, inventories, counter, total):
@@ -36,18 +38,21 @@ def statics(option, inventories, counter, total):
                         counter += finalprice
                     print(f"{counter} $\n")
                 else:
+                    #en caso de que la lista este vacia damos el mensaje informativo
                     print("No hay productos en el inventario")
             elif option == 2:
-                        #verificamos que la lista no este vacia leugo vamos sumando la cantidad de articulos en total
+                        #verificamos que la lista no este vacia luego vamos sumando la cantidad de articulos en total
                         # finalmente mostramos la informaicon en el print.
                 if len(inventories) != 0:
                     for inventary in inventories:
                         total += inventary["Quantity"]
                     print(f"En estos momentos usted ha registrado {total} productos\n")
                 else:
+                    #en caso de que la lista este vacia damos el mensaje informativo
                     print("No hay productos en el inventario")
             elif option == 3:
                         #volvemos al menu anterior
                 break
+        #try y except para manejo de excepciones de tipado.
         except ValueError as e:
             print(f"Error {e}: la entrada no es un numero valido, intenta de nuevo.")

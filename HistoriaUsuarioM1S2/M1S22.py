@@ -24,6 +24,7 @@ while True:
             name = input("\nIngrese el nombre del producto: ")
             price = float(input("Agregue el precio del producto: "))
             quantity = int(input("Ingrese la cantidad solicitada del producto: "))
+            
             addproduct(inventories, name, price, quantity)
         elif option == 2:
             showinventories(inventories)
@@ -33,6 +34,8 @@ while True:
             #finalizamos el programa.
             break
         else:
+            #controlamos las opciones del menu, en caso de que seleccione una opcion no valida del menu
             print("selecciones un valor valido en las opciones del menu.")
+    #try y except para manejo de excepciones de tipado.
     except ValueError as e:
         print(f"Error {e}: la entrada no es un numero valido, intenta de nuevo.")
