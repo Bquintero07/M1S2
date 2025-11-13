@@ -1,4 +1,4 @@
-from Funtions import addproduct, showinventories, statics
+from Functions import addproduct, showinventories, statics
 
 
 

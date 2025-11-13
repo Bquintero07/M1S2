@@ -24,7 +24,7 @@ def statics(option, inventories, counter, total):
             option = int(input("Ingrese el numero de la opcion que desea realizar: "))
                     # control de las opciones del menu.
             if option < 1 or option > 3:
-                        raise ValueError
+                raise ValueError
             elif option == 1:
                         #verificamos que la lista no este vacia, luego iteramos uno por uno en los items de la lista
                         #creamos una variable para ir calculando el precio de cada articulo con finalprice = inventary["Price"] * inventary["Quantity"]
